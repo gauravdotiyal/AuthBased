@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node dist/app.js",
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
-    "build": "tsc",
+    "build": "prisma generate && tsc",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
-    "postinstall": "prisma generate && npm run build"
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",
@@ -27,12 +27,12 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.1",
     "mysql2": "^3.6.1",
-    "zod": "^3.21.4"
+    "zod": "^3.21.4",
+    "typescript": "^5.1.6",
+    "prisma": "^5.0.0"
   },
   "devDependencies": {
-    "prisma": "^5.0.0",
     "ts-node": "^10.9.1",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.1.6"
+    "ts-node-dev": "^2.0.0"
   }
 }

@@ -28,7 +28,8 @@ export const useAuth = () => {
 };
 
 // Configure axios defaults
-axios.defaults.baseURL =  'http://localhost:3000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+axios.defaults.baseURL = API_URL;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.withCredentials = true;
 
